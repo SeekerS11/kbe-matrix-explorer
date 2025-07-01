@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kubeark AI Matrix Explorer - Enterprise AI Platform Comparison</title>
+    <meta name="description" content="Comprehensive comparison matrix of leading enterprise automation and AI orchestration platforms including Kubeark, IBM Watsonx, UiPath, and more." />
+    <meta name="author" content="Kubeark" />
+
+    <meta property="og:title" content="Kubeark AI Matrix Explorer - Enterprise AI Platform Comparison" />
+    <meta property="og:description" content="Comprehensive comparison matrix of leading enterprise automation and AI orchestration platforms including Kubeark, IBM Watsonx, UiPath, and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/kube_logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kubeark" />
+    <meta name="twitter:image" content="/kube_logo.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17121487350"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17121487350');
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <script>
+      function getParam(name) {
+        return new URLSearchParams(window.location.search).get(name) || '';
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const a4 = getParam('utm_source');
+        const a5 = getParam('utm_campaign');
+        const a6 = getParam('utm_term');
+        const a7 = getParam('utm_adgroup');
+        const extra = `&a4=${encodeURIComponent(a4)}&a5=${encodeURIComponent(a5)}&a6=${encodeURIComponent(a6)}&a7=${encodeURIComponent(a7)}&autofill=true`;
+
+        // Append only to Calendly links
+        const links = document.querySelectorAll('a[href*="calendly.com"]');
+
+        links.forEach(link => {
+          if (link.href.includes('?')) {
+            link.href += extra;
+          } else {
+            link.href += '?' + extra.slice(1); // in case no ? exists (unlikely)
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
