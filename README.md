@@ -1,24 +1,18 @@
-# Welcome to your Lovable project
+# KBE Matrix Explorer
 
-## Project info
+A web application for exploring and comparing Kubernetes-based environments (KBE) through an interactive matrix interface.
 
-**URL**: https://lovable.dev/projects/5c847dfd-1ea9-425f-bd01-dc662aadce96
+## Project Overview
+
+This project provides a comprehensive tool for analyzing and comparing different Kubernetes environments, configurations, and deployments through an intuitive matrix-based interface.
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/5c847dfd-1ea9-425f-bd01-dc662aadce96) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Clone this repo and work locally using your own IDE. The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 
@@ -27,7 +21,7 @@ Follow these steps:
 git clone <YOUR_GIT_URL>
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd kbe-matrix-explorer
 
 # Step 3: Install the necessary dependencies.
 npm i
@@ -60,14 +54,38 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Features
 
-Simply open [Lovable](https://lovable.dev/projects/5c847dfd-1ea9-425f-bd01-dc662aadce96) and click on Share -> Publish.
+- Interactive matrix interface for comparing KBE environments
+- Modern, responsive UI built with shadcn/ui components
+- TypeScript for type safety and better development experience
+- Fast development with Vite's hot module replacement
 
-## Can I connect a custom domain to my Lovable project?
+## Development
 
-Yes, you can!
+To start developing:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Install dependencies: `npm install`
+2. Start the dev server: `npm run dev`
+3. Open your browser to the local development URL
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Building for Production
+
+To build the project for production:
+
+```sh
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is open source and available under the MIT License.
