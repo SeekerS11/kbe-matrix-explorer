@@ -1,8 +1,11 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle, AlertCircle, XCircle, Star, Zap, Shield, Cpu, Globe, Code, Users, Eye, Link, DollarSign } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ComparisonMatrix = () => {
+  const isMobile = useIsMobile();
+  
   const platforms = [
     'Kubeark',
     'IBM Watsonx',
@@ -325,13 +328,12 @@ const ComparisonMatrix = () => {
             <Table className="w-full">
               <TableHeader>
                 <TableRow className="bg-gray-50">
-                  <TableHead className="sticky left-0 z-20 bg-gray-50 border-r border-gray-200 font-bold text-gray-900 min-w-[200px] max-w-[200px]">
+                  <TableHead className={`sticky left-0 z-30 border-r border-gray-200 font-bold text-gray-900 ${isMobile ? 'min-w-[120px] max-w-[140px]' : 'min-w-[200px] max-w-[200px]'} bg-gray-50`}>
                     <div className="flex items-center space-x-2">
                       <span className="text-sm">Feature</span>
                     </div>
                   </TableHead>
-                  <TableHead className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-center min-w-[120px] max-w-[120px] relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-20"></div>
+                  <TableHead className={`sticky ${isMobile ? 'left-[120px]' : 'left-[200px]'} z-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-r border-gray-200 font-bold text-center min-w-[120px] max-w-[120px]`}>
                     <div className="relative flex items-center justify-center space-x-1">
                       <Star className="w-3 h-3" />
                       <span className="text-xs">Kubeark</span>
@@ -352,15 +354,13 @@ const ComparisonMatrix = () => {
                       index % 2 === 0 ? 'bg-gray-50' : 'bg-gray-100'
                     } hover:bg-gray-200`}
                   >
-                    <TableCell className={`sticky left-0 z-10 border-r-2 border-gray-300 font-medium text-gray-900 min-w-[200px] max-w-[200px] ${
-                      index % 2 === 0 ? 'bg-gray-50' : 'bg-gray-100'
-                    }`}>
+                    <TableCell className={`sticky left-0 z-30 border-r-2 border-gray-300 font-medium text-gray-900 ${isMobile ? 'min-w-[120px] max-w-[140px]' : 'min-w-[200px] max-w-[200px]'} ${index % 2 === 0 ? 'bg-gray-50' : 'bg-gray-100'}`}>
                       <div className="flex items-center space-x-2">
                         {feature.icon}
                         <span className="text-xs leading-tight">{feature.name}</span>
                       </div>
                     </TableCell>
-                    <TableCell className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-2 border-blue-500 border-r border-gray-200 min-w-[120px] max-w-[120px]">
+                    <TableCell className={`sticky ${isMobile ? 'left-[120px]' : 'left-[200px]'} z-20 bg-blue-50 border-l-2 border-blue-500 border-r border-gray-200 min-w-[120px] max-w-[120px]`}>
                       <div className="flex flex-col items-center space-y-1 p-1">
                         <div className="flex justify-center">
                           {iconMap[feature.data['Kubeark'].icon]}
